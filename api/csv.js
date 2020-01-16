@@ -7,6 +7,7 @@ const CSV_SHEET =
 
 export default (req, httpres) => {
   console.log("request at", new Date());
+  httpres.setHeader("Access-Control-Allow-Origin", "*");
 
   axios.get(CSV_SHEET).then(res => {
     httpres.send(res.data);
